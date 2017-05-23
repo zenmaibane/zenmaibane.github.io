@@ -11,7 +11,10 @@
     <script type="text/processing" data-processing-target="canvas">
     /* @pjs preload="shinchoku.png" */
     PImage shinchokuImage; 
-    float Cx, Cy;
+    float imgPosX;
+    float imgPosY;
+    float imgVX = 12;
+    float imgVY = 7;
     void setup(){
         size(1280,720);
         fill(255);
@@ -21,10 +24,6 @@
         imageMode(CENTER);
 
     }
-    float imgPosX;
-    float imgPosY;
-    float imgVX = 12;
-    float imgVY = 7;
     void draw(){ 
         background(255);
         translate(imgPosX, imgPosY);
