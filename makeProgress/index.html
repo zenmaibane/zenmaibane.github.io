@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>進捗を出せ</title>
+    <script src="./processing.js"></script>
+</head>
+
+<body>
+    <!-- 
+                    ↓↓↓ 進捗 ↓↓↓
+
+ 　 　 　.　　,';;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;|
+ 　 　 　 　 ,'' ´￣　　　　　 　￣｀ ' - ､;;;;;;;;;;|
+ 　　　　.　,' .,､ｒ‐' ﾏ:::::::フ' ｰ‐- .､,.`'‐ ､;;;|
+ 　　　　　|/ _　　　｀` ´　　　,,.､.､　ヾ:..､,｀|   .      な　 そ
+　 　 . 　 ﾚ'´_ヾｪ､,_　　 ,,､ｒ〆＿_`'　';::::::`':.､,│     い　 ん
+　　　　 r|. ヽ ﾓl~ﾌ 　 / ヾ、ﾓl ,､ 　　|;:::::::::::`i              な
+　　　　 l l　　￣　l　 .'　　　￣　 　 　|　 ヽ:::::::l　 　      も
+　　　　 ヽ! 　 　　!　　　　　　　　　　l:!l'　 l:::::',　        の
+　　　　 /::ゝ､.＿ L.._＿_　＿＿__....ノ::l　ノ: :::::::ヽ.      は
+　　 　 /::i::::r'"´￣　 　￣　　｀ `ヽ;:::::::l´!:::::::ヽ
+　　　 ,'::/:::i, 　 ー‐───-　 　     l::::::::',';:::::::l
+.　　　lノ:::::::',　　　 ‐-　　　　　 /::::::::',';:::::::|
+　 　 /:::::::::::ヽ　　　　　　　　 ノ:::::::::',';､:::i::l
+　 ／:;:::::::::::::ヽ,、　　　　,.r:'":::::::::::〈/＼:::!ﾘ
+. /::/::::::::::::::::ヾ‐-‐''"::::::::::::::i;:::l/＼＼/
+. !:/ l;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;||::/　　＼ヽ､
+    -->
+    <script type="text/processing" data-processing-target="canvas">
+    /* @pjs preload="shinchoku.png" */
+    PImage shinchokuImage; 
+    float imgPosX;
+    float imgPosY;
+    float imgVX;
+    float imgVY;
+    void setup(){
+        size(1280,720);
+        fill(255);
+        shinchokuImage = loadImage("shinchoku.png");
+        imgPosX = width/2;
+        imgPosY = height/2;
+        imageMode(CENTER);
+        int s = second();
+        imgVX = s%36 + 1;
+        imgVY = s%32 + 1;
+    }
+    void draw(){ 
+        background(255);
+        translate(imgPosX, imgPosY);
+        rotate(frameCount / 10.0);
+        image(shinchokuImage, 0, 0);
+        imgPosX += imgVX;
+        imgPosY += imgVY;
+        if(imgPosX + shinchokuImage.width/2 > width){
+            imgPosX = width - shinchokuImage.width/2;
+            imgVX *= -1;
+        }else if(imgPosX - shinchokuImage.width/2 < 0){
+            imgPosX = shinchokuImage.width/2;
+            imgVX *= -1;
+        }
+        if(imgPosY + shinchokuImage.height/2 > height){
+            imgPosY = height - shinchokuImage.height/2;
+            imgVY *= -1;
+        }else if(imgPosY - shinchokuImage.height/2 < 0){
+            imgPosY = shinchokuImage.height/2;
+            imgVY *= -1;
+        }
+    }
+
+
+</script>
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>
