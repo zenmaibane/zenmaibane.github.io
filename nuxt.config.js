@@ -9,14 +9,11 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'portfolio' }
     ],
-    link: [
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    css: [
+      { src: '~assets/base.less', lang: 'less' },
+      { src: 'bulma/bulma.sass', lang: 'sass' }
     ]
   },
-  css: [
-    { src: '~assets/base.less', lang: 'less' }
-  ],
 
   mode: 'spa',
   /*
