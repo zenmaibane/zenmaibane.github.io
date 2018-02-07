@@ -1,12 +1,20 @@
 <template>
   <div id="wrapper">
+    <headern-nav/>
     <nuxt/>
   </div>
 </template>
 
-<style lang="less">
-// body{
-//   height: 100%;
-//   background-color: aqua;
-// }
+<script>
+import headernNav from '~/components/headerNav.vue'
+export default {
+  components: {
+    headernNav
+  }
+}
+</script>
+
+<style lang="less" scoped>
+
 </style>
+
