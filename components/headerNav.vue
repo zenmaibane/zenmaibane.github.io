@@ -1,15 +1,15 @@
 <template>
 <header>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-transparent  is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
      <site-title/>
-     <button class="button navbar-burger">
+     <div class="navbar-burger burger" :class="{'is-active':this.isOpeningMenu}"  @click="menuClick" data-target="navMenu">
       <span></span>
       <span></span>
       <span></span>
-     </button>
+     </div>
     </div>
-    <div class="navbar-menu">
+    <div class="navbar-menu" :class="{'is-active':this.isOpeningMenu}" id="navMenu">
       <div class="navbar-end">
         <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
         <nuxt-link class="navbar-item" to="/activity">Activity</nuxt-link>
@@ -24,8 +24,18 @@
 <script>
 import siteTitle from '~/components/siteTitle.vue'
 export default {
+  data: () => {
+    return {
+      isOpeningMenu: false
+    }
+  },
   components: {
     siteTitle
+  },
+  methods: {
+    menuClick () {
+      this.isOpeningMenu = !this.isOpeningMenu
+    }
   }
 }
 </script>
@@ -38,8 +48,7 @@ export default {
 }
 
 .navbar-item{
-  display: inline-flex;
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
  .nuxt-link-exact-active{
