@@ -16,12 +16,12 @@ export default {
 
 
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 
 #site-title{
     font-size: 2rem;
     a{
-        color: #E63462;
+        color: #F61067;
         font-family: 'Raleway', sans-serif;
     }
     //背景色をいい感じに

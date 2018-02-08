@@ -11,8 +11,8 @@ module.exports = {
     ]
   },
   css: [
-    { src: '~assets/base.less', lang: 'less' },
-    { src: 'bulma/bulma.sass', lang: 'sass' }
+    { src: '~assets/base.scss', lang: 'scss' },
+    { src: '~assets/bulmaCustom.scss', lang: 'scss' }
   ],
   mode: 'spa',
   /*
@@ -26,7 +26,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',

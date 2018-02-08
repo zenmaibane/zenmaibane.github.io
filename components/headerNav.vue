@@ -1,23 +1,23 @@
 <template>
 <header>
   <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <site-title/>
-    <button class="button navbar-burger">
+    <div class="navbar-brand">
+     <site-title/>
+     <button class="button navbar-burger">
       <span></span>
       <span></span>
       <span></span>
-    </button>
-    <div class="nav-menu">
-      <div class="navbar-start">
+     </button>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
         <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
-        <nuxt-link class="navbar-item" to="/">Activity</nuxt-link>
-        <nuxt-link class="navbar-item" to="/">Works</nuxt-link>
-        <nuxt-link class="navbar-item" to="/">im@s</nuxt-link>
+        <nuxt-link class="navbar-item" to="/activity">Activity</nuxt-link>
+        <nuxt-link class="navbar-item" to="/works">Works</nuxt-link>
+        <nuxt-link class="navbar-item" to="/imas">im@s</nuxt-link>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </header>
 </template>
 
@@ -30,13 +30,19 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
+@import '~assets/bulmaCustom.scss';
 #site-title{
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-.nav-item{
-  align-items: center;
+.navbar-item{
+  display: inline-flex;
+    margin-right: 1rem;
 }
 
+ .nuxt-link-exact-active{
+   color: $link;
+ }
 </style>
