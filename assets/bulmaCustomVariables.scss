@@ -1,0 +1,9 @@
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/derived-variables.sass";
+
+$base-white:#FFFBFE;
+$pink:#F61067;
+$navbar-background-color:rgba(255, 255, 255, 0.8);
+$link:$pink;
+$navbar-item-hover-background-color:$navbar-background-color;
