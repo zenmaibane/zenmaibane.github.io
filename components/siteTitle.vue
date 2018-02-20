@@ -1,6 +1,6 @@
 <template>
 <h1 id="site-title">
-    <nuxt-link to="/">tokei's portfolio</nuxt-link>
+    <nuxt-link to="~/">tokei's portfolio</nuxt-link>
 </h1>
 </template>
 
@@ -8,7 +8,10 @@
 export default {
   head: {
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Raleway' }
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Raleway'
+      }
     ]
   }
 }
@@ -17,13 +20,12 @@ export default {
 
 
 <style lang="scss" scoped>
-
-#site-title{
-    font-size: 2rem;
-    a{
-        color: #F61067;
-        font-family: 'Raleway', sans-serif;
-    }
-    //背景色をいい感じに
+@import "~assets/bulmaCustomVariables.scss";
+#site-title {
+  font-size: 2rem;
+  a {
+    color: $pink;
+    font-family: "Raleway", sans-serif;
+  }
 }
 </style>

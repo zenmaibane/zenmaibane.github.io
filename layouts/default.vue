@@ -1,7 +1,9 @@
 <template>
   <div id="wrapper">
     <headern-nav/>
-    <nuxt/>
+    <main class="container">
+      <nuxt/>
+    </main>
   </div>
 </template>
 
@@ -13,3 +15,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~assets/bulmaCustomVariables.scss";
+
+#wrapper {
+  margin-top: 2rem;
+}
+
+main {
+  background-color: $base-white;
+  max-width: 85%;
+  padding: 1.2rem 3.2rem;
+}
+</style>

@@ -8,7 +8,11 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'portfolio' }
-    ]
+    ],
+    script: [{
+      src: 'https://use.fontawesome.com/releases/v5.0.4/js/all.js',
+      defar: true
+    }]
   },
   css: [
     { src: '~assets/base.scss', lang: 'scss' },
@@ -27,7 +31,7 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
-      if (ctx.dev && ctx.isClient) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
